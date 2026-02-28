@@ -1,0 +1,38 @@
+:root {
+  --bg-dark: #1d2021;
+  --fg-light: #ebdbb2;
+  --accent-yellow: #fabd2f;
+  --accent-red: #cc241d;
+  --accent-blue: #458588;
+  --accent-purple: #b16286;
+  --accent-gold: #d79921;
+  --accent-green: #689d6a;
+  --accent-orange: #fe8019;
+  --accent-aqua: #8ec07c;
+  --accent-bright-red: #fb4934;
+  --black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--fg-light);
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+::selection {
+  background: var(--accent-yellow);
+  color: var(--black);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}

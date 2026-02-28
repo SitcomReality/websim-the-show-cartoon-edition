@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Show - Cartoon Edition</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- Header / Spotlight Area -->
+    <header class="sticky-header cartoon-border" style="position: sticky; top: 0; z-index: 50; background: var(--bg-dark); height: 8rem; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; border-top: none; border-left: none; border-right: none;">
+        <!-- Left Spotlight -->
+        <div class="spotlight-housing" style="left: 20%;">
+            <div class="spotlight-bulb"></div>
+            <div class="spotlight-bulb"></div>
+            <div class="spotlight-cone"></div>
+        </div>
+        
+        <!-- Right Spotlight -->
+        <div class="spotlight-housing" style="right: 20%;">
+            <div class="spotlight-bulb"></div>
+            <div class="spotlight-bulb"></div>
+            <div class="spotlight-cone"></div>
+        </div>
+
+        <h1 style="color: var(--accent-yellow); font-size: 3rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; filter: drop-shadow(4px 4px 0px #000);">
+            The Show
+        </h1>
+
+        <nav style="display: flex; gap: 1.5rem;">
+            <button class="interactive-btn">ACT I</button>
+            <button class="interactive-btn">ACT II</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main style="position: relative; z-index: 30; padding: 3rem 2rem 8rem 2rem; max-width: 800px; margin: 0 auto;">
+        
+        <section class="cartoon-border cartoon-shadow rotate-left" style="background: white; color: black; padding: 2rem; margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span data-icon="Star"></span> WELCOME TO THE STAGE
+            </h2>
+            <p>This website is designed with a cartoony, cell-shaded aesthetic. Everything you see—the bold outlines, the flat colors, and the stage-like layout—is built to give you the feeling of being right in the middle of a performance.</p>
+        </section>
+
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+            <div class="cartoon-border cartoon-shadow rotate-right" style="background: var(--accent-orange); padding: 1.5rem; color: white;">
+                <div data-icon="Lightbulb" style="margin-bottom: 1rem;"></div>
+                <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">The Concept</h3>
+                <p>Scroll down to see the audience grow! The rows of seats dynamically adjust to the page height.</p>
+            </div>
+            <div class="cartoon-border cartoon-shadow rotate-left" style="background: var(--accent-purple); padding: 1.5rem; color: white;">
+                <div data-icon="Message" style="margin-bottom: 1rem;"></div>
+                <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">Interactive</h3>
+                <p>Hover over the buttons and sections to see the cartoony physics in action.</p>
+            </div>
+        </section>
+
+        <section class="cartoon-border cartoon-shadow" style="background: var(--accent-green); color: black; padding: 2rem; margin-bottom: 3rem;">
+            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-transform: uppercase;">
+                <span data-icon="Play"></span> Feature Acts
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="feature-row">
+                    <div class="feature-number">1</div>
+                    <div style="flex-grow: 1;">
+                        <h4 style="font-weight: bold; text-transform: uppercase;">Performance Scene 1</h4>
+                        <p style="font-size: 0.8rem; opacity: 0.8;">A dramatic display of digital art.</p>
+                    </div>
+                    <div data-icon="Star"></div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-number">2</div>
+                    <div style="flex-grow: 1;">
+                        <h4 style="font-weight: bold; text-transform: uppercase;">Performance Scene 2</h4>
+                        <p style="font-size: 0.8rem; opacity: 0.8;">The second act of our digital play.</p>
+                    </div>
+                    <div data-icon="Star"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cartoon-border cartoon-shadow rotate-slight" style="background: var(--accent-bright-red); padding: 2rem; margin-bottom: 3rem; color: white;">
+            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span data-icon="Info"></span> EXTRA CONTENT
+            </h2>
+            <p style="margin-bottom: 1rem;">The more content we add, the more people come to watch the show! Check the bottom of the page to see the growing audience.</p>
+            <p>The rows of people behind the main content are arranged to look like a packed theater. We use a resize observer to ensure that no matter how long the page gets, the audience stays full.</p>
+        </section>
+    </main>
+
+    <!-- Curtains -->
+    <div class="curtain curtain-left">
+        <div class="curtain-fold" style="left: 20%;"></div>
+        <div class="curtain-fold" style="left: 40%;"></div>
+        <div class="curtain-fold" style="left: 60%;"></div>
+        <div class="curtain-fold" style="left: 80%;"></div>
+        <div class="curtain-tie"></div>
+    </div>
+    <div class="curtain curtain-right">
+        <div class="curtain-fold" style="left: 20%;"></div>
+        <div class="curtain-fold" style="left: 40%;"></div>
+        <div class="curtain-fold" style="left: 60%;"></div>
+        <div class="curtain-fold" style="left: 80%;"></div>
+        <div class="curtain-tie"></div>
+    </div>
+
+    <!-- Audience Background Layer -->
+    <div id="bg-audience-container" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; opacity: 0.3; padding-top: 8rem;">
+        <!-- Injected via JS -->
+    </div>
+
+    <!-- Actual Audience Layer (Footer) -->
+    <div style="position: relative; z-index: 10; margin-top: 5rem; pointer-events: none;">
+        <div id="fg-audience-container" style="background: rgba(29, 32, 33, 0.8); backdrop-filter: blur(4px); padding-top: 2rem; display: flex; flex-direction: column-reverse;">
+            <!-- Injected via JS -->
+        </div>
+        <div style="height: 6rem; background: black; border-top: 8px solid var(--accent-yellow); display: flex; align-items: center; justify-content: center;">
+            <span style="color: var(--accent-yellow); font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; font-size: 1.25rem;">The Show Goes On</span>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
