@@ -16,7 +16,10 @@
   padding: 0.5rem 1rem;
   font-weight: bold;
   box-shadow: 4px 4px 0px #1a1a1a;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.2s;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
 .interactive-btn:hover {
