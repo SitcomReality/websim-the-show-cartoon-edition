@@ -11,55 +11,55 @@
 <body>
 
     <!-- Header / Spotlight Area -->
-    <header class="sticky-header cartoon-border" style="position: sticky; top: 0; z-index: 50; background: var(--bg-dark); height: 8rem; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; border-top: none; border-left: none; border-right: none;">
+    <header class="main-header sticky-header cartoon-border">
         <!-- Left Spotlight -->
-        <div class="spotlight-housing" style="left: 20%;">
+        <div class="spotlight-housing spotlight-left">
             <div class="spotlight-bulb"></div>
             <div class="spotlight-bulb"></div>
             <div class="spotlight-cone"></div>
         </div>
         
         <!-- Right Spotlight -->
-        <div class="spotlight-housing" style="right: 20%;">
+        <div class="spotlight-housing spotlight-right">
             <div class="spotlight-bulb"></div>
             <div class="spotlight-bulb"></div>
             <div class="spotlight-cone"></div>
         </div>
 
-        <h1 style="color: var(--accent-yellow); font-size: 3rem; font-weight: 900; text-transform: uppercase; letter-spacing: -2px; filter: drop-shadow(4px 4px 0px #000);">
+        <h1 class="main-title">
             The Show
         </h1>
 
-        <nav style="display: flex; gap: 1.5rem;">
+        <nav class="main-nav">
             <button class="interactive-btn">ACT I</button>
             <button class="interactive-btn">ACT II</button>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main style="position: relative; z-index: 30; padding: 3rem 2rem 8rem 2rem; max-width: 800px; margin: 0 auto;">
+    <main class="main-content-area">
         
-        <section class="cartoon-border cartoon-shadow rotate-left" style="background: white; color: black; padding: 2rem; margin-bottom: 3rem;">
+        <section class="cartoon-border cartoon-shadow rotate-left section-block" style="background: white; color: black;">
             <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                 <span data-icon="Star"></span> WELCOME TO THE STAGE
             </h2>
             <p>This website is designed with a cartoony, cell-shaded aesthetic. Everything you see—the bold outlines, the flat colors, and the stage-like layout—is built to give you the feeling of being right in the middle of a performance.</p>
         </section>
 
-        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
-            <div class="cartoon-border cartoon-shadow rotate-right" style="background: var(--accent-orange); padding: 1.5rem; color: white;">
+        <section class="responsive-grid">
+            <div class="cartoon-border cartoon-shadow rotate-right grid-item" style="background: var(--accent-orange); color: white;">
                 <div data-icon="Lightbulb" style="margin-bottom: 1rem;"></div>
                 <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">The Concept</h3>
                 <p>Scroll down to see the audience grow! The rows of seats dynamically adjust to the page height.</p>
             </div>
-            <div class="cartoon-border cartoon-shadow rotate-left" style="background: var(--accent-purple); padding: 1.5rem; color: white;">
+            <div class="cartoon-border cartoon-shadow rotate-left grid-item" style="background: var(--accent-purple); color: white;">
                 <div data-icon="Message" style="margin-bottom: 1rem;"></div>
                 <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">Interactive</h3>
                 <p>Hover over the buttons and sections to see the cartoony physics in action.</p>
             </div>
         </section>
 
-        <section class="cartoon-border cartoon-shadow" style="background: var(--accent-green); color: black; padding: 2rem; margin-bottom: 3rem;">
+        <section class="cartoon-border cartoon-shadow section-block" style="background: var(--accent-green); color: black;">
             <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-transform: uppercase;">
                 <span data-icon="Play"></span> Feature Acts
             </h2>
@@ -83,7 +83,7 @@
             </div>
         </section>
 
-        <section class="cartoon-border cartoon-shadow rotate-slight" style="background: var(--accent-bright-red); padding: 2rem; margin-bottom: 3rem; color: white;">
+        <section class="cartoon-border cartoon-shadow rotate-slight section-block" style="background: var(--accent-bright-red); color: white;">
             <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                 <span data-icon="Info"></span> EXTRA CONTENT
             </h2>

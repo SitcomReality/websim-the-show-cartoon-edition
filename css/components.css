@@ -9,6 +9,13 @@
   background: var(--accent-red);
   border-left: 6px solid var(--black);
   border-right: 6px solid var(--black);
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .curtain {
+    width: 3rem;
+  }
 }
 
 .curtain-left { left: 0; transform-origin: left; animation: sway 5s ease-in-out infinite; }
@@ -48,6 +55,17 @@
   display: flex;
   justify-content: space-around;
   padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .spotlight-housing {
+    width: 4rem;
+    height: 2rem;
+    padding: 0.25rem;
+  }
+  .spotlight-left { left: 5% !important; }
+  .spotlight-right { right: 5% !important; }
 }
 
 .spotlight-bulb {
@@ -83,6 +101,13 @@
   height: 3.5rem;
   margin: 0 0.25rem;
   flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .audience-member {
+    width: 1.5rem;
+    height: 2rem;
+  }
 }
 
 .audience-head {
