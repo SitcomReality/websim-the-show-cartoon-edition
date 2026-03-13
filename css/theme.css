@@ -117,14 +117,27 @@
   display: block;
 }
 
-/* Invisible bridge to prevent hover loss over the gap */
+/* 
+   Gap Bridge: This invisible pseudo-element spans the margin gap 
+   so the hover state isn't lost when moving the cursor from 
+   the button to the menu. 
+*/
 .dropdown-menu::before {
   content: '';
   position: absolute;
-  top: -0.6rem;
+  top: -0.5rem; /* Matches margin-top */
   left: 0;
-  right: 0;
-  height: 0.6rem;
+  width: 100%;
+  height: 0.5rem;
+  background: transparent;
+}
+
+/* Submenu Bridge: Bridges the horizontal gap for nested menus */
+.dropdown-submenu::before {
+  top: 0;
+  left: -0.25rem; /* Matches margin-left */
+  width: 0.25rem;
+  height: 100%;
 }
 
 /* Menu Items */
@@ -168,22 +181,8 @@
   display: block;
 }
 
-/* Invisible bridge for sub-menus */
-.dropdown-submenu::before {
-  content: '';
-  position: absolute;
-  left: -0.4rem;
-  top: 0;
-  bottom: 0;
-  width: 0.4rem;
-}
-
 /* Mobile Adjustments for Navigation */
 @media (max-width: 768px) {
-  .dropdown-submenu::before {
-    display: none;
-  }
-
   .dropdown-submenu {
     position: static;
     margin-left: 1rem;
