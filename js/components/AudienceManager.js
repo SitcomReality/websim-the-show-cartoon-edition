@@ -9,9 +9,10 @@ export class AudienceManager {
   createMember(color) {
     const member = document.createElement('div');
     member.className = 'audience-member';
+    member.style.setProperty('--member-color', color);
     member.innerHTML = `
-      <div class="audience-head" style="background-color: ${color}"></div>
-      <div class="audience-shoulders" style="background-color: ${color}"></div>
+      <div class="audience-head"></div>
+      <div class="audience-shoulders"></div>
     `;
     return member;
   }

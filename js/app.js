@@ -4,7 +4,6 @@ import { AudienceManager } from './components/AudienceManager.js';
 class App {
   constructor() {
     this.bgAudience = new AudienceManager('bg-audience-container', true);
-    this.fgAudience = new AudienceManager('fg-audience-container', false);
     this.isTransitioning = false;
     this.init();
   }
@@ -13,7 +12,6 @@ class App {
     this.renderIcons();
     this.setupResizeObserver();
     this.setupRouting();
-    this.fgAudience.update(6); // Static foreground rows
   }
 
   renderIcons() {
