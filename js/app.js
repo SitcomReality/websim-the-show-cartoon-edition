@@ -52,6 +52,9 @@ class App {
 
         if (!wasOpen) {
           dropdown.classList.add('is-open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        } else {
+          menuBtn.setAttribute('aria-expanded', 'false');
         }
         return;
       }
@@ -113,15 +116,16 @@ class App {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       
-      const newContent = doc.querySelector('.main-content-area');
-      const currentContent = document.querySelector('.main-content-area');
+      const newContent = doc.querySelector('.site-main');
+      const currentContent = document.querySelector('.site-main');
 
       if (newContent && currentContent) {
         // 3. Swap main-content-area
         currentContent.innerHTML = newContent.innerHTML;
         
-        // 4. Update Title
+        // 4. Update Title and Body Class
         document.title = doc.title;
+        document.body.className = doc.body.className;
 
         // 5. Update History
         if (push) {
