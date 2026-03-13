@@ -107,6 +107,44 @@ body.curtains-closed .curtain {
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 
+/* Nav Tooltip */
+.nav-tooltip {
+  position: absolute;
+  background: var(--black);
+  color: var(--accent-yellow);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border: 2px solid var(--accent-yellow);
+  white-space: nowrap;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+.nav-tooltip.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .nav-tooltip {
+    bottom: auto;
+    top: 50%;
+    left: auto;
+    right: 1rem;
+    transform: translateY(-50%) translateX(10px);
+  }
+  .nav-tooltip.is-visible {
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
 /* Audience */
 .audience-member {
   position: relative;
