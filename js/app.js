@@ -63,24 +63,24 @@ class App {
         const item = link.parentElement;
         const hasSubmenu = link.classList.contains('has-submenu');
 
-        // On mobile/touch, if it has a submenu, first click opens it
-        if (hasSubmenu && window.innerWidth <= 768) {
+        // Unified behavior: first click opens submenu, second click navigates
+        if (hasSubmenu) {
           if (!item.classList.contains('is-open')) {
             e.preventDefault();
-            // Close siblings
-            const siblings = item.parentElement.querySelectorAll('.dropdown-item.is-open');
+            // Close siblings at the same level
+            const siblings = item.parentElement.querySelectorAll(':scope > .dropdown-item.is-open');
             siblings.forEach(s => s.classList.remove('is-open'));
             item.classList.add('is-open');
             return;
           }
         }
 
-        // Standard navigation for actual links
+        // Standard navigation for actual links (or second click on submenu parent)
         const url = new URL(link.href);
         if (url.origin === window.location.origin) {
           e.preventDefault();
           
-          // Close menus before transition
+          // Close all menus before transition
           document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
           
           this.navigateTo(link.getAttribute('href'));
