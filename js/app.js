@@ -26,7 +26,8 @@ class App {
   setupResizeObserver() {
     const updateRows = () => {
       const height = document.body.scrollHeight;
-      const newRows = Math.max(12, Math.floor(height / 40));
+      // Adjusted row spacing to account for slightly taller members and overlap
+      const newRows = Math.max(12, Math.floor(height / 48));
       this.bgAudience.update(newRows);
     };
 
