@@ -13,6 +13,7 @@ class App {
     this.setupResizeObserver();
     this.setupRouting();
     this.initCarousel();
+    this.setupForms();
   }
 
   renderIcons() {
@@ -133,6 +134,14 @@ class App {
     });
   }
 
+  setupForms() {
+    document.querySelectorAll('form.theatrical-form').forEach(form => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+      });
+    });
+  }
+
   initCarousel() {
     const container = document.querySelector('.carousel-container');
     if (!container) return;
@@ -211,6 +220,7 @@ class App {
         // 6. Re-render icons and re-init components for new content
         this.renderIcons();
         this.initCarousel();
+        this.setupForms();
         
         // Scroll to top
         window.scrollTo(0, 0);
