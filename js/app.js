@@ -38,15 +38,56 @@ class App {
   }
 
   setupRouting() {
-    // Intercept clicks on navigation links
+    // Intercept clicks on navigation links and handle dropdown toggles
     document.addEventListener('click', (e) => {
+      // 1. Handle Menu Button (Mobile/Tablet toggle)
+      const menuBtn = e.target.closest('.interactive-btn');
+      if (menuBtn && menuBtn.parentElement.classList.contains('dropdown')) {
+        const dropdown = menuBtn.parentElement;
+        const wasOpen = dropdown.classList.contains('is-open');
+        
+        // Close all others first
+        document.querySelectorAll('.dropdown.is-open, .dropdown-item.is-open').forEach(el => {
+          el.classList.remove('is-open');
+        });
+
+        if (!wasOpen) {
+          dropdown.classList.add('is-open');
+        }
+        return;
+      }
+
+      // 2. Handle Navigation and Submenus
       const link = e.target.closest('.nav-link');
       if (link && link.href && !this.isTransitioning) {
+        const item = link.parentElement;
+        const hasSubmenu = link.classList.contains('has-submenu');
+
+        // On mobile/touch, if it has a submenu, first click opens it
+        if (hasSubmenu && window.innerWidth <= 768) {
+          if (!item.classList.contains('is-open')) {
+            e.preventDefault();
+            // Close siblings
+            const siblings = item.parentElement.querySelectorAll('.dropdown-item.is-open');
+            siblings.forEach(s => s.classList.remove('is-open'));
+            item.classList.add('is-open');
+            return;
+          }
+        }
+
+        // Standard navigation for actual links
         const url = new URL(link.href);
         if (url.origin === window.location.origin) {
           e.preventDefault();
+          
+          // Close menus before transition
+          document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
+          
           this.navigateTo(link.getAttribute('href'));
         }
+      } else if (!e.target.closest('.dropdown')) {
+        // Clicked outside - close all menus
+        document.querySelectorAll('.is-open').forEach(el => el.classList.remove('is-open'));
       }
     });
 
