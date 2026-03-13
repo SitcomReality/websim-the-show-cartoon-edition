@@ -117,6 +117,16 @@
   display: block;
 }
 
+/* Invisible bridge to prevent hover loss over the gap */
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -0.6rem;
+  left: 0;
+  right: 0;
+  height: 0.6rem;
+}
+
 /* Menu Items */
 .dropdown-item {
   position: relative;
@@ -158,8 +168,22 @@
   display: block;
 }
 
+/* Invisible bridge for sub-menus */
+.dropdown-submenu::before {
+  content: '';
+  position: absolute;
+  left: -0.4rem;
+  top: 0;
+  bottom: 0;
+  width: 0.4rem;
+}
+
 /* Mobile Adjustments for Navigation */
 @media (max-width: 768px) {
+  .dropdown-submenu::before {
+    display: none;
+  }
+
   .dropdown-submenu {
     position: static;
     margin-left: 1rem;
