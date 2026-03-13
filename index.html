@@ -32,7 +32,7 @@
 
         <nav class="main-nav">
             <div class="dropdown">
-                <button class="interactive-btn" style="display: flex; align-items: center; gap: 0.5rem;">
+                <button class="interactive-btn nav-btn-content">
                     <span data-icon="Menu"></span> MENU <span data-icon="ChevronDown"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -80,89 +80,86 @@
     <!-- Main Content -->
     <main class="main-content-area">
         
-        <section class="cartoon-border cartoon-shadow rotate-left section-block" style="background: white; color: black;">
-            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+        <section class="cartoon-border cartoon-shadow rotate-left section-block scene-white">
+            <h2 class="section-header">
                 <span data-icon="Star"></span> WELCOME TO THE STAGE
             </h2>
             <p>This website is designed with a cartoony, cell-shaded aesthetic. Everything you see—the bold outlines, the flat colors, and the stage-like layout—is built to give you the feeling of being right in the middle of a performance.</p>
         </section>
 
         <section class="responsive-grid">
-            <div class="cartoon-border cartoon-shadow rotate-right grid-item" style="background: var(--accent-orange); color: white;">
-                <div data-icon="Lightbulb" style="margin-bottom: 1rem;"></div>
-                <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">The Concept</h3>
+            <div class="cartoon-border cartoon-shadow rotate-right grid-item scene-orange">
+                <div data-icon="Lightbulb" class="icon-margin-bottom"></div>
+                <h3 class="grid-title">The Concept</h3>
                 <p>Scroll down to see the audience grow! The rows of seats dynamically adjust to the page height.</p>
             </div>
-            <div class="cartoon-border cartoon-shadow rotate-left grid-item" style="background: var(--accent-purple); color: white;">
-                <div data-icon="Message" style="margin-bottom: 1rem;"></div>
-                <h3 style="font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">Interactive</h3>
+            <div class="cartoon-border cartoon-shadow rotate-left grid-item scene-purple">
+                <div data-icon="Message" class="icon-margin-bottom"></div>
+                <h3 class="grid-title">Interactive</h3>
                 <p>Hover over the buttons and sections to see the cartoony physics in action.</p>
             </div>
         </section>
 
-        <section class="cartoon-border cartoon-shadow section-block" style="background: var(--accent-green); color: black;">
-            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; text-transform: uppercase;">
+        <section class="cartoon-border cartoon-shadow section-block scene-green">
+            <h2 class="section-header section-header-large">
                 <span data-icon="Play"></span> Feature Acts
             </h2>
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="feature-list">
                 <div class="feature-row">
                     <div class="feature-number">1</div>
-                    <div style="flex-grow: 1;">
-                        <h4 style="font-weight: bold; text-transform: uppercase;">Performance Scene 1</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.8;">A dramatic display of digital art.</p>
+                    <div class="feature-content">
+                        <h4 class="feature-title">Performance Scene 1</h4>
+                        <p class="feature-desc">A dramatic display of digital art.</p>
                     </div>
                     <div data-icon="Star"></div>
                 </div>
                 <div class="feature-row">
                     <div class="feature-number">2</div>
-                    <div style="flex-grow: 1;">
-                        <h4 style="font-weight: bold; text-transform: uppercase;">Performance Scene 2</h4>
-                        <p style="font-size: 0.8rem; opacity: 0.8;">The second act of our digital play.</p>
+                    <div class="feature-content">
+                        <h4 class="feature-title">Performance Scene 2</h4>
+                        <p class="feature-desc">The second act of our digital play.</p>
                     </div>
                     <div data-icon="Star"></div>
                 </div>
             </div>
         </section>
 
-        <section class="cartoon-border cartoon-shadow rotate-slight section-block" style="background: var(--accent-bright-red); color: white;">
-            <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+        <section class="cartoon-border cartoon-shadow rotate-slight section-block scene-red-bright">
+            <h2 class="section-header">
                 <span data-icon="Info"></span> EXTRA CONTENT
             </h2>
-            <p style="margin-bottom: 1rem;">The more content we add, the more people come to watch the show! Check the bottom of the page to see the growing audience.</p>
+            <p class="margin-bottom-1">The more content we add, the more people come to watch the show! Check the bottom of the page to see the growing audience.</p>
             <p>The rows of people behind the main content are arranged to look like a packed theater. We use a resize observer to ensure that no matter how long the page gets, the audience stays full.</p>
         </section>
     </main>
 
     <!-- Curtains -->
     <div class="curtain curtain-left">
-        <div class="curtain-fold" style="left: 20%;"></div>
-        <div class="curtain-fold" style="left: 40%;"></div>
-        <div class="curtain-fold" style="left: 60%;"></div>
-        <div class="curtain-fold" style="left: 80%;"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
         <div class="curtain-tie"></div>
     </div>
     <div class="curtain curtain-right">
-        <div class="curtain-fold" style="left: 20%;"></div>
-        <div class="curtain-fold" style="left: 40%;"></div>
-        <div class="curtain-fold" style="left: 60%;"></div>
-        <div class="curtain-fold" style="left: 80%;"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
         <div class="curtain-tie"></div>
     </div>
 
     <!-- Audience Background Layer -->
-    <div id="bg-audience-container" style="position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; opacity: 0.3; padding-top: 8rem;">
+    <div id="bg-audience-container" class="audience-bg-layer">
         <!-- Injected via JS -->
     </div>
 
-    <!-- Actual Audience Layer (Footer) -->
-    <div style="position: relative; z-index: 10; margin-top: 5rem; pointer-events: none;">
-        <div id="fg-audience-container" style="background: rgba(29, 32, 33, 0.8); backdrop-filter: blur(4px); padding-top: 2rem; display: flex; flex-direction: column-reverse;">
-            <!-- Injected via JS -->
+    <!-- Footer Area -->
+    <footer class="main-footer">
+        <div class="footer-marquee">
+            <span class="footer-text">The Show Goes On</span>
         </div>
-        <div style="height: 6rem; background: black; border-top: 8px solid var(--accent-yellow); display: flex; align-items: center; justify-content: center;">
-            <span style="color: var(--accent-yellow); font-weight: 900; text-transform: uppercase; letter-spacing: 0.5em; font-size: 1.25rem;">The Show Goes On</span>
-        </div>
-    </div>
+    </footer>
 
     <script type="module" src="js/app.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
