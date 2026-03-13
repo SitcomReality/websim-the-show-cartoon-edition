@@ -107,42 +107,46 @@
   border: 4px solid var(--black);
   box-shadow: 6px 6px 0px var(--black);
   top: 100%;
-  left: 0;
+  right: 0; /* Align right to prevent off-screen on desktop */
   padding: 0;
   margin-top: 0.5rem;
 }
 
-/* Show Menu on Hover */
-.dropdown:hover > .dropdown-menu {
+/* Show Menu on Hover (Desktop only) */
+@media (min-width: 769px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+  .dropdown-item:hover > .dropdown-submenu {
+    display: block;
+  }
+}
+
+/* Mobile specific toggle class */
+.dropdown.is-open > .dropdown-menu,
+.dropdown-item.is-open > .dropdown-submenu {
   display: block;
 }
 
-/* 
-   Gap Bridge: This invisible pseudo-element spans the gap and overlaps 
-   the trigger button to ensure the hover state is never lost during 
-   the transition from button to menu.
-*/
+/* Bridge elements to prevent hover loss */
 .dropdown-menu::before {
   content: '';
   position: absolute;
-  top: -1.25rem; /* Overlaps the button by reaching past the margin */
-  left: -10%;
-  width: 120%;
-  height: 1.5rem;
+  top: -1rem;
+  left: 0;
+  width: 100%;
+  height: 1.25rem;
   background: transparent;
-  z-index: -1;
 }
 
-/* Submenu Bridge: Bridges the horizontal gap for nested menus with extra buffer */
 .dropdown-submenu::before {
   content: '';
   position: absolute;
-  top: -10%;
-  left: -1rem; /* Reaches into the parent menu item */
-  width: 1.5rem;
-  height: 120%;
+  top: 0;
+  right: -1.5rem;
+  width: 2rem;
+  height: 100%;
   background: transparent;
-  z-index: -1;
 }
 
 /* Menu Items */
@@ -161,7 +165,7 @@
   font-weight: bold;
   font-size: 0.9rem;
   text-transform: uppercase;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.1s, color 0.1s;
   border-bottom: 2px solid var(--black);
 }
 
@@ -174,33 +178,47 @@
   border-bottom: none;
 }
 
-/* Nested Sub-menus */
+/* Nested Sub-menus - Opening to the left to avoid screen edge */
 .dropdown-submenu {
-  top: -4px; /* Align with border */
-  left: 100%;
+  top: -4px;
+  right: 100%;
+  left: auto;
   margin-top: 0;
-  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
-.dropdown-item:hover > .dropdown-submenu {
-  display: block;
+/* Arrow rotation when open on mobile */
+.dropdown-item.is-open > .dropdown-link [data-icon="ChevronRight"],
+.dropdown-item.is-open > .dropdown-link [data-icon="ChevronDown"] {
+  transform: rotate(90deg);
 }
 
 /* Mobile Adjustments for Navigation */
 @media (max-width: 768px) {
+  .dropdown-menu {
+    position: fixed; /* Full width/height approach for better mobile UX */
+    top: 6rem;
+    left: 1rem;
+    right: 1rem;
+    width: calc(100% - 2rem);
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 12px 12px 0px var(--black);
+  }
+
   .dropdown-submenu {
     position: static;
-    margin-left: 1rem;
-    border-left: 4px solid var(--accent-yellow);
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-left: 8px solid var(--accent-yellow);
+    background: rgba(0,0,0,0.2);
     box-shadow: none;
-    display: none; /* Can be toggled if needed, but keeping hover for simplicity */
-    border-right: none;
-    border-top: none;
-    border-bottom: none;
   }
-  
-  .dropdown-item:hover > .dropdown-submenu {
-    display: block;
+
+  .dropdown-link {
+    padding: 1.25rem 1rem; /* Bigger tap targets */
+    font-size: 1rem;
   }
 }
 
