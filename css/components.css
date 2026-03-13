@@ -14,7 +14,10 @@
 
 @media (max-width: 768px) {
   .curtain {
-    width: 3rem;
+    width: 2rem;
+  }
+  .curtain-tie {
+    height: 1.25rem;
   }
 }
 
@@ -113,7 +116,7 @@ body.curtains-closed .curtain {
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .audience-member {
     width: 1.5rem;
     height: 2rem;
