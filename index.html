@@ -31,8 +31,49 @@
         </h1>
 
         <nav class="main-nav">
-            <a href="index.html" class="interactive-btn nav-link">ACT I</a>
-            <a href="act2.html" class="interactive-btn nav-link">ACT II</a>
+            <div class="dropdown">
+                <button class="interactive-btn" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span data-icon="Menu"></span> MENU <span data-icon="ChevronDown"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <a href="index.html" class="dropdown-link nav-link">
+                            ACT I <span data-icon="ChevronRight"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-submenu">
+                            <li class="dropdown-item">
+                                <a href="index.html" class="dropdown-link nav-link">
+                                    Chapter 1 <span data-icon="ChevronRight"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li><a href="index.html" class="dropdown-link nav-link">Alternate beginning</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="index.html" class="dropdown-link nav-link">Chapter 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="act2.html" class="dropdown-link nav-link">
+                            ACT II <span data-icon="ChevronRight"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-submenu">
+                            <li class="dropdown-item">
+                                <a href="act2.html" class="dropdown-link nav-link">Chapter 3</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="act2.html" class="dropdown-link nav-link">
+                                    Chapter 4 <span data-icon="ChevronRight"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-submenu">
+                                    <li><a href="act2.html" class="dropdown-link nav-link">Alternate ending</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 
